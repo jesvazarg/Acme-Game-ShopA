@@ -1,0 +1,13 @@
+discount.code			= Código de descuento
+discount.percentage		= Porcentaje
+discount.used			= Usado
+
+discount.yes			= sí
+discount.no				= no
+
+discount.save			= Guardar
+discount.delete			= Borrar
+discount.cancel			= Cancelar
+discount.edit			= Editar
+discount.new			= Crear un nuevo descuento
+discount.commit.error	= No se puede realizar la operación

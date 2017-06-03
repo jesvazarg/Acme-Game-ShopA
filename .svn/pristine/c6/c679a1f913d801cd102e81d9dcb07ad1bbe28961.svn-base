@@ -1,0 +1,23 @@
+# messages_es.properties
+#
+# Copyright (C) 2017 Universidad de Sevilla
+# 
+# The use of this project is hereby constrained to the conditions of the 
+# TDG Licence, a copy of which you may download from 
+# http://www.tdg-seville.info/License.html
+
+game.title					= Titulo
+game.price					= Precio
+shoppingCart.buy			= Comprar
+shoppingCart.remove 		= Eliminar
+shoppingCart.total 			= Total
+
+shoppingCart.newCreditCard		= Crear una tarjeta de crédito
+shoppingCart.editCreditCard		= Editar tarjeta de crédito
+
+shoppingCart.commit.error					= No se puede realizar la operación
+shoppingCart.commit.error.notCreditCard		= Tarjeta de crédito no registrada
+shoppingCart.commit.error.validCreditCard	= Tarjeta de crédito no válida
+shoppingCart.commit.error.invalidDiscunt	= Descuento no válido
+shoppingCart.commit.error.discuntUsed		= Descuento usado
+shoppingCart.commit.error.age				= Edad insuficiente

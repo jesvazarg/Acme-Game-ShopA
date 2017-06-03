@@ -1,0 +1,48 @@
+# messages.properties
+#
+# Copyright (C) 2017 Universidad de Sevilla
+# 
+# The use of this project is hereby constrained to the conditions of the 
+# TDG Licence, a copy of which you may download from 
+# http://www.tdg-seville.info/License.html
+
+master.page.list	= List
+master.page.create	= Create
+
+master.page.administrator.dashboard			= Dashboard
+master.page.administrator.category.list		= Categories
+master.page.administrator.banner.list		= Banners
+master.page.administrator.discount.list		= Discounts
+master.page.administrator.critic.register	= Register critic
+
+master.page.critic.review.list		= My reviews
+
+master.page.conditions				= Conditions
+
+master.page.customer				= Customer
+master.page.customer.action.1		= Action 1
+master.page.customer.action.2		= Action 2
+
+master.page.game					= Games
+master.page.game.list				= List Games
+master.page.game.listMyGames		= List my games
+master.page.game.create				= Create
+
+master.page.messages				= Messages
+master.page.messagesEmail.received	= Received  
+master.page.messagesEmail.sent		= Sent 
+
+master.page.profile 				= Profile
+master.page.edit.profile			= Edit profile
+
+master.page.login 					= Login
+master.page.logout 					= Logout
+
+master.page.register				= Register
+master.page.customer.register		= as customer
+master.page.developer.register		= as developer
+
+master.page.customer.shoppingCart	= Shoppingcart
+master.page.customer.receipt.list	= Receipts
+
+master.page.profile.display			= Display profile
