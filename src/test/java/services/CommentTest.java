@@ -14,6 +14,14 @@ import utilities.AbstractTest;
 import domain.Comment;
 import domain.Game;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * al caso de uso "Añadir comentarios a los juegos" para comprobar
+ * que se crean adecuadamente.
+ * 
+ * @author Student
+ * 
+ */
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -40,6 +48,17 @@ public class CommentTest extends AbstractTest {
 	//El primer test negativo es causado porque no nos hemos logueado correctmente como customer, el segundo de
 	//ellos se produce porque le ponemos un score fuera del rango 0-10 y el tercero es probocado porque le
 	//pasamos un id de game que no existe.
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como cliente debe ser capaz de: Añadir comentarios a los juegos.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede añadir correctamente
+	 * comentarios a un juego.
+	 * 
+	 * El primer test negativo es causado porque no nos hemos logueado correctmente como customer, el segundo de
+	 * ellos se produce porque le ponemos un score fuera del rango 0-10 y el tercero es probocado porque le
+	 * pasamos un id de game que no existe.
+	 */
 	@Test
 	public void driverAñadirComentarioAUnJuego() {
 		final Object testingData[][] = {

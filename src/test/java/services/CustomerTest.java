@@ -17,6 +17,15 @@ import utilities.AbstractTest;
 import domain.Customer;
 import forms.CreateCustomerForm;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * al caso de uso "Registrarse y loguearse como cliente" y
+ * "Cambiar perfil de un cliente" para comprobar
+ * que se realizan adecuadamente.
+ * 
+ * @author Student
+ * 
+ */
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -38,6 +47,15 @@ public class CustomerTest extends AbstractTest {
 	//El primer test negativo se produce porque el atributo Contraseña y Repetir contraseña no son iguales,
 	//el siguiente error se produce porque el atributo IsAgree se encuetra a false (el usuario no ha aceptado los terminos)
 	//por ultimo el correo electronico no sigue el formato adecuado
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Registrarse en el sistema como cliente.
+	 * 
+	 * En este primer test vamos a registrarnos como cliente,
+	 * El primer test negativo se produce porque el atributo Contraseña y Repetir contraseña no son iguales,
+	 * el siguiente error se produce porque el atributo IsAgree se encuetra a false (el usuario no ha aceptado los terminos)
+	 * por ultimo el correo electronico no sigue el formato adecuado
+	 */
 	@Test
 	public void driverRegistrarUnCliente() {
 		final Object testingData[][] = {
@@ -101,6 +119,12 @@ public class CustomerTest extends AbstractTest {
 	}
 
 	//Con este test comprobamos que nos logueamos correctamente
+	/**
+	 * * FUNCTIONAL REQUIREMENTS
+	 * - Loguearse en el sistema usando sus credenciales.
+	 * 
+	 * Con este test lo que vamos a comprobar es que un usuario es capaz de loguearse adecuadamente.
+	 */
 	@Test
 	public void driverLoguearteComoCustomer() {
 		final Object testingData[][] = {
@@ -141,6 +165,14 @@ public class CustomerTest extends AbstractTest {
 	//Con este test lo que hacemos es modificar el perfil del cliente que esta logueado
 	//Las pruebas que dan errores son porque la contraseña no es igual que la confirmacion de la contraseña,
 	//intentamos loguearnos con un cliente que no existe y ponemos un correo electronico no valido
+	/**
+	 * * FUNCTIONAL REQUIREMENTS
+	 * - Cambiar el perfil de un cliente.
+	 * 
+	 * Con este test lo que hacemos es modificar el perfil del cliente que esta logueado
+	 * Las pruebas que dan errores son porque la contraseña no es igual que la confirmacion de la contraseña,
+	 * intentamos loguearnos con un cliente que no existe y ponemos un correo electronico no valido
+	 */
 	@Test
 	public void driverEditarUnCliente() {
 		final Object testingData[][] = {

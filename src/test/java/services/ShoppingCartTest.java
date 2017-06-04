@@ -15,6 +15,14 @@ import domain.Discount;
 import domain.Game;
 import domain.ShoppingCart;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * al caso de uso "Añadir juegos al carro de la compra y realizar la compra" para comprobar
+ * que funciona adecuadamente.
+ * 
+ * @author Student
+ * 
+ */
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -45,6 +53,21 @@ public class ShoppingCartTest extends AbstractTest {
 	//El primer test negativo es causado porque el customer3 no tiene la edad permitida para comprarlo,
 	//el segundo es porque un developer no puede añadir juegos al carrito y el ultimo es causado porque
 	//se le pasa un id de juego que no existe.
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como cliente debe ser capaz de: Añadir juegos en su carro de la compra.
+	 * 
+	 * La edad del comprador de un videojuego debe ser mayor o igual a la que el juego requiere para ser jugado.
+	 * Un cliente no puede comprar un juego si no tiene una tarjeta de crédito válida.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede añadir juegos a su carro de la compra
+	 * y posteriormente puede eliminarlos adecuadamente.
+	 * 
+	 * El primer test negativo es causado porque el customer3 no tiene la edad permitida para comprarlo,
+	 * el segundo es porque un developer no puede añadir juegos al carrito y el ultimo es causado porque
+	 * se le pasa un id de juego que no existe.
+	 */
 	@Test
 	public void driverAñadirYEliminarJuegosAlCarrito() {
 		final Object testingData[][] = {
@@ -98,6 +121,20 @@ public class ShoppingCartTest extends AbstractTest {
 	//El primer test negativo es causado ya que le ponemos un usuario que no es un customer,
 	//el segundo de ellos el id del game no existe, y los dos ultimos es causado ya que ni
 	//el custmer2 ni el customer3 tienen tarjeta de credito
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como cliente debe ser capaz de: Comprar los juegos de su carro de la compra.
+	 * 
+	 * La edad del comprador de un videojuego debe ser mayor o igual a la que el juego requiere para ser jugado.
+	 * Un cliente no puede comprar un juego si no tiene una tarjeta de crédito válida.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede comprar los juegos que tiene en su carro
+	 * de la compra adecuadamente haciendo uso de un codigo de descuento
+	 * 
+	 * El primer test negativo es causado ya que le ponemos un usuario que no es un customer,
+	 * el segundo de ellos el id del game no existe, y los dos ultimos es causado ya que ni
+	 * el custmer2 ni el customer3 tienen tarjeta de credito
+	 */
 	@Test
 	public void driverComprarJuegosDelCarrito() {
 		final Object testingData[][] = {

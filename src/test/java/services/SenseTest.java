@@ -13,6 +13,14 @@ import utilities.AbstractTest;
 import domain.Game;
 import domain.Sense;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * al caso de uso "Darle me gusta/no me gusta a los juegos" para comprobar
+ * que se crean adecuadamente.
+ * 
+ * @author Student
+ * 
+ */
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -36,9 +44,19 @@ public class SenseTest extends AbstractTest {
 	//-	Un actor autenticado como cliente debe ser capaz de:
 	//	Darle "me gusta/no me gusta" a los juegos.
 
-	//El primer caso negativos se produce porque intentamos darle like a un juego sin
+	//El primer caso negativo se produce porque intentamos darle like a un juego sin
 	//estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
 	//like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como cliente debe ser capaz de: Darle "me gusta/no me gusta" a los juegos..
+	 * 
+	 * En este test vamos a comprobar que un usuario puede darle "me gusta" a un juego
+	 * 
+	 * El primer caso negativo se produce porque intentamos darle like a un juego sin
+	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
+	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
+	 */
 	@Test
 	public void driverDarMeGustaAUnJuego() {
 		final Object testingData[][] = {
@@ -81,9 +99,20 @@ public class SenseTest extends AbstractTest {
 
 	}
 
-	//El primer caso negativos se produce porque intentamos darle dislike a un juego sin
+	//El primer caso negativo se produce porque intentamos darle dislike a un juego sin
 	//estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
 	//dislike a un juego y por ultimo introducimos un id que no pertenece a ningun juego
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como cliente debe ser capaz de: Darle "me gusta/no me gusta" a los juegos..
+	 * 
+	 * En este test vamos a comprobar que un usuario puede darle "no me gusta" a un juego
+	 * 
+	 * El primer caso negativo se produce porque intentamos darle like a un juego sin
+	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
+	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
+	 */
 	@Test
 	public void driverDarNoGustaAUnJuego() {
 		final Object testingData[][] = {
@@ -126,6 +155,17 @@ public class SenseTest extends AbstractTest {
 
 	}
 
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como cliente debe ser capaz de: Darle "me gusta/no me gusta" a los juegos..
+	 * 
+	 * En este test vamos a comprobar que un usuario que ya le ha dado "me gusta" o "no me gusta"
+	 * a un juego es capaz de cambiar ese "me gusta/no me gusta" adecuadamente
+	 * 
+	 * El primer caso negativos se produce porque intentamos darle like a un juego sin
+	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
+	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
+	 */
 	@Test
 	public void driverCambiarLikeODislike() {
 		final Object testingData[][] = {
