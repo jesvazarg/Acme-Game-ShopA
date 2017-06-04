@@ -20,7 +20,7 @@ import domain.ShoppingCart;
  * al caso de uso "Añadir juegos al carro de la compra y realizar la compra" para comprobar
  * que funciona adecuadamente.
  * 
- * @author Student
+ * @author Santiago
  * 
  */
 @ContextConfiguration(locations = {
@@ -67,6 +67,11 @@ public class ShoppingCartTest extends AbstractTest {
 	 * El primer test negativo es causado porque el customer3 no tiene la edad permitida para comprarlo,
 	 * el segundo es porque un developer no puede añadir juegos al carrito y el ultimo es causado porque
 	 * se le pasa un id de juego que no existe.
+	 * 
+	 * * @param No
+	 * es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverAñadirYEliminarJuegosAlCarrito() {
@@ -134,6 +139,11 @@ public class ShoppingCartTest extends AbstractTest {
 	 * El primer test negativo es causado ya que le ponemos un usuario que no es un customer,
 	 * el segundo de ellos el id del game no existe, y los dos ultimos es causado ya que ni
 	 * el custmer2 ni el customer3 tienen tarjeta de credito
+	 * 
+	 * * @param No
+	 * es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverComprarJuegosDelCarrito() {

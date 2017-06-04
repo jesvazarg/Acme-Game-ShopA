@@ -23,7 +23,7 @@ import forms.CreateCustomerForm;
  * "Cambiar perfil de un cliente" para comprobar
  * que se realizan adecuadamente.
  * 
- * @author Student
+ * @author Santiago
  * 
  */
 @ContextConfiguration(locations = {
@@ -55,6 +55,11 @@ public class CustomerTest extends AbstractTest {
 	 * El primer test negativo se produce porque el atributo Contraseña y Repetir contraseña no son iguales,
 	 * el siguiente error se produce porque el atributo IsAgree se encuetra a false (el usuario no ha aceptado los terminos)
 	 * por ultimo el correo electronico no sigue el formato adecuado
+	 * 
+	 * * @param No
+	 * es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverRegistrarUnCliente() {
@@ -124,6 +129,11 @@ public class CustomerTest extends AbstractTest {
 	 * - Loguearse en el sistema usando sus credenciales.
 	 * 
 	 * Con este test lo que vamos a comprobar es que un usuario es capaz de loguearse adecuadamente.
+	 * 
+	 * * @param No
+	 * es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverLoguearteComoCustomer() {
@@ -172,6 +182,11 @@ public class CustomerTest extends AbstractTest {
 	 * Con este test lo que hacemos es modificar el perfil del cliente que esta logueado
 	 * Las pruebas que dan errores son porque la contraseña no es igual que la confirmacion de la contraseña,
 	 * intentamos loguearnos con un cliente que no existe y ponemos un correo electronico no valido
+	 * 
+	 * * @param No
+	 * es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverEditarUnCliente() {

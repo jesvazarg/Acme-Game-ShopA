@@ -19,7 +19,7 @@ import domain.Game;
  * al caso de uso "Añadir comentarios a los juegos" para comprobar
  * que se crean adecuadamente.
  * 
- * @author Student
+ * @author Santiago
  * 
  */
 @ContextConfiguration(locations = {
@@ -58,6 +58,11 @@ public class CommentTest extends AbstractTest {
 	 * El primer test negativo es causado porque no nos hemos logueado correctmente como customer, el segundo de
 	 * ellos se produce porque le ponemos un score fuera del rango 0-10 y el tercero es probocado porque le
 	 * pasamos un id de game que no existe.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverAñadirComentarioAUnJuego() {

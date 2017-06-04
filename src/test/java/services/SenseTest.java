@@ -18,7 +18,7 @@ import domain.Sense;
  * al caso de uso "Darle me gusta/no me gusta a los juegos" para comprobar
  * que se crean adecuadamente.
  * 
- * @author Student
+ * @author Santiago
  * 
  */
 @ContextConfiguration(locations = {
@@ -56,6 +56,11 @@ public class SenseTest extends AbstractTest {
 	 * El primer caso negativo se produce porque intentamos darle like a un juego sin
 	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
 	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
+	 * 
+	 * * @param No
+	 * es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverDarMeGustaAUnJuego() {
@@ -112,6 +117,11 @@ public class SenseTest extends AbstractTest {
 	 * El primer caso negativo se produce porque intentamos darle like a un juego sin
 	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
 	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
+	 * 
+	 * * @param No
+	 * es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverDarNoGustaAUnJuego() {
@@ -165,6 +175,11 @@ public class SenseTest extends AbstractTest {
 	 * El primer caso negativos se produce porque intentamos darle like a un juego sin
 	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
 	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
+	 * 
+	 * * @param No
+	 * es necesario parametro
+	 * 
+	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverCambiarLikeODislike() {
