@@ -17,6 +17,15 @@ import utilities.AbstractTest;
 import domain.Category;
 import domain.Game;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * al caso de uso "Crear, editar, borrar, filtrar y buscar juegos" para comprobar
+ * que se crean adecuadamente.
+ * 
+ * @author Pablo Romero Vazquez
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -41,6 +50,24 @@ public class GameTest extends AbstractTest {
 	//El primer test negativo es causado porque no nos hemos logueado developer, el segundo de
 	//ellos se produce porque introducimos un campo vacio (descripcion) y el tercero es provocado porque le
 	//pasamos un id de categoria que no existe.
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como desarrollador debe ser capaz de: Crear, editar y borrar los juegos.
+	 * 
+	 * En este test vamos a comprobar que un desarrollador puede crear correctamente
+	 * un juego.
+	 * 
+	 * El primer test negativo es causado porque no nos hemos logueado correctmente como desarrollador, el segundo de
+	 * ellos se produce porque introducimos un campo vacio (descripcion) y el tercero es provocado porque le
+	 * pasamos un id de categoria que no existe.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
+
 	@Test
 	public void driverCreateGame() {
 		final Object testingData[][] = {
@@ -99,6 +126,24 @@ public class GameTest extends AbstractTest {
 	//El primer test negativo es causado porque no nos hemos logueado developer, el segundo de
 	//ellos se produce porque introducimos un campo vacio (descripcion) y el tercero es provocado porque le
 	//pasamos un id de categoria que no existe.
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como desarrollador debe ser capaz de: Crear, editar y borrar los juegos.
+	 * 
+	 * En este test vamos a comprobar que un desarrollador puede editar correctamente
+	 * un juego.
+	 * 
+	 * El primer test negativo es causado porque no nos hemos logueado correctmente como desarrollador, el segundo de
+	 * ellos se produce porque introducimos un campo vacio (descripcion) y el tercero es provocado porque le
+	 * pasamos un id de categoria que no existe.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
+
 	@Test
 	public void driverEditGame() {
 		final Object testingData[][] = {
@@ -158,6 +203,22 @@ public class GameTest extends AbstractTest {
 	//El primer test negativo es causado porque la id del juego es de un juego que pertence a otro developer 
 	//y el segundo es porque no estamos logueado como developer.
 
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado como desarrollador debe ser capaz de: Crear, editar y borrar los juegos.
+	 * 
+	 * En este test vamos a comprobar que un desarrollador puede borrar correctamente
+	 * un juego.
+	 * 
+	 * El primer test negativo es causado porque la id del juego es de un juego que pertence a otro developer
+	 * y el segundo es porque no estamos logueado como developer.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
+
 	@Test
 	public void driverDeleteGame() {
 		final Object testingData[][] = {
@@ -194,8 +255,24 @@ public class GameTest extends AbstractTest {
 
 	}
 
-	//Probamos la búsqueda de juegos usando una palabra clave contenia en su nombre o en
+	//Probamos la búsqueda de juegos usando una palabra clave contenida en su nombre o en
 	// su descripcion.El primer test negativo es causado porque no estamos logueados.
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: buscar juegos usando una palabra clave.
+	 * 
+	 * En este test vamos a comprobar que un usuario logueado puede buscar un juego
+	 * correctamente usando una palabra clave contenida en su nombre o en
+	 * su descripcion.
+	 * 
+	 * El primer test negativo es causado porque no estamos logueados.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 
 	@Test
 	public void driverFindGameByNameOrDescription() {
@@ -232,6 +309,22 @@ public class GameTest extends AbstractTest {
 
 	//Probamos el filtrado de juegos mediante un rango de precios o una categoria
 	//El primer test negativo es causado porque no estamos logueados.
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: filtrar juegos bien por
+	 * categoría o bien por un rango de precios.
+	 * 
+	 * En este test vamos a comprobar que un usuario logueado puede buscar un juego
+	 * mediante un rango de precios o una categoria.
+	 * 
+	 * El primer test negativo es causado porque no estamos logueados.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 
 	@Test
 	public void driverFilterGameByCategoryOrPrice() {

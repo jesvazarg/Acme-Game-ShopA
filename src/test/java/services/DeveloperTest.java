@@ -18,6 +18,16 @@ import utilities.AbstractTest;
 import domain.Developer;
 import forms.CreateDeveloperForm;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * al caso de uso "Registrarse y loguearse como desarrollador" y
+ * "Cambiar perfil de un desarrollador" para comprobar
+ * que se realizan adecuadamente.
+ * 
+ * @author Pablo Romero Vazquez
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -40,6 +50,21 @@ public class DeveloperTest extends AbstractTest {
 	//El primer test negativo se produce porque el atributo Contraseña y Repetir contraseña no son iguales,
 	//el siguiente error se produce porque el atributo IsAgree se encuetra a false (el usuario no ha aceptado los terminos)
 	//por ultimo el correo electronico no sigue el formato adecuado
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Registrarse en el sistema como desarrollar.
+	 * 
+	 * En este primer test vamos a registrarnos como desarrollador,
+	 * El primer test negativo se produce porque el atributo Contraseña y Repetir contraseña no son iguales,
+	 * el siguiente error se produce porque el atributo IsAgree se encuetra a false (el usuario no ha aceptado los terminos)
+	 * por ultimo el correo electronico no sigue el formato adecuado
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 */
+
 	@Test
 	public void driverRegistrarDeveloper() {
 		final Object testingData[][] = {
@@ -100,6 +125,18 @@ public class DeveloperTest extends AbstractTest {
 	}
 
 	//Con este test comprobamos que nos logueamos correctamente
+
+	/**
+	 * * FUNCTIONAL REQUIREMENTS
+	 * - Loguearse en el sistema usando sus credenciales.
+	 * 
+	 * Con este test lo que vamos a comprobar es que un desarrollador es capaz de loguearse adecuadamente.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 */
+
 	@Test
 	public void driverLogInDeveloper() {
 		final Object testingData[][] = {
@@ -140,6 +177,19 @@ public class DeveloperTest extends AbstractTest {
 	//Con este test lo que hacemos es modificar el perfil del developer que esta logueado
 	//Las pruebas que dan errores son porque la contraseña no es igual que la confirmacion de la contraseña,
 	//porque intentamos loguearnos con un cliente que no existe y porque ponemos un correo electronico no valido
+
+	/**
+	 * * FUNCTIONAL REQUIREMENTS
+	 * - Cambiar el perfil de un desarrollador.
+	 * 
+	 * Con este test lo que hacemos es modificar el perfil del desarrollador que esta logueado
+	 * Las pruebas que dan errores son porque la contraseña no es igual que la confirmacion de la contraseña,
+	 * intentamos loguearnos con un cliente que no existe y ponemos un correo electronico no valido
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 */
 
 	@Test
 	public void driverEditDeveloper() {

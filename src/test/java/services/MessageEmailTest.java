@@ -14,6 +14,15 @@ import utilities.AbstractTest;
 import domain.Actor;
 import domain.MessageEmail;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * al caso de uso "Enviar, responder, reenviar y borrar mensajes" para comprobar
+ * que se crean adecuadamente.
+ * 
+ * @author Pablo Romero Vazquez
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -31,12 +40,29 @@ public class MessageEmailTest extends AbstractTest {
 	// Tests ------------------------------------------------------------------
 
 	// REQUISITOS FUNCIONALES
-	//Chirp to another actor.
-	//Browse the list of messages that he or she's got, and reply to any of them.
-	//Browse the list of messages that he or she's sent, and re-send any of them.
-	//Erase any of the messages that he or she's got or sent.
+	//Enviar mensajes a otro actor.
+	//Listar los mensajes que ha recibido y reponderlos.
+	//Listar los mensajes que ha enviado y reenviarlos.
+	//Borrar los mensahes que ha recibido o enviado.
 
 	//En este primer driver se comprueba que un actor pueda enviar un mensaje a otro actor
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: Enviar mensajes.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede mandar correctamente
+	 * un mensaje.
+	 * 
+	 * El primer test negativo es causado porque no nos hemos logueado correctamente, el segundo de
+	 * ellos se produce porque dejamos el campo texto en blanco y el tercero es provocado porque el
+	 * campo asunto esta vacío.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 
 	@Test
 	public void driverEnvioDeMensaje() {
@@ -85,6 +111,23 @@ public class MessageEmailTest extends AbstractTest {
 
 	//En este driver se comprueba que un actor puede responder a un determinado mensaje.
 
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: Responder mensajes.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede responder correctamente
+	 * un mensaje.
+	 * 
+	 * El primer test negativo es causado porque dejamos el campo texto en blanco y
+	 * el segundo es provocado porque intentamos responder a un mensaje del que no somos
+	 * destinatario.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
+
 	@Test
 	public void driverRespuestaDeMensaje() {
 		final Object testingData[][] = {
@@ -128,6 +171,22 @@ public class MessageEmailTest extends AbstractTest {
 	}
 
 	//En este driver se comprueba que un actor puede reenviar un mensaje.
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: Reenviar mensajes.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede reenviar correctamente
+	 * un mensaje.
+	 * 
+	 * El primer test negativo es causado porque intentamos reenviar un mensaje del que no
+	 * somos emisor y el segundo es provocado por dejar el campo asunto en blanco.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 
 	@Test
 	public void driverReenvioDeMensaje() {
@@ -174,6 +233,21 @@ public class MessageEmailTest extends AbstractTest {
 
 	//En este driver se comprueba que un actor puede borrar un mensaje suyo.
 
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: Borrar mensajes.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede borrar correctamente
+	 * un mensaje.
+	 * 
+	 * Los dos tests negativos son causados porque no nos pertenecen esos mensajes.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
+
 	@Test
 	public void driverBorrarMensaje() {
 		final Object testingData[][] = {
@@ -201,7 +275,6 @@ public class MessageEmailTest extends AbstractTest {
 			final MessageEmail aux = this.messageEmailService.findOne(chirp);
 			this.messageEmailService.delete(aux);
 
-			//this.chirpService.findAll();
 			this.unauthenticate();
 		} catch (final Throwable oops) {
 			caught = oops.getClass();

@@ -14,6 +14,14 @@ import utilities.AbstractTest;
 import domain.CreditCard;
 import domain.Developer;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * con la creación, edición y borrado de una tarjeta de crédito.
+ * 
+ * @author Pablo Romero Vazquez
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -36,6 +44,22 @@ public class CreditCardTest extends AbstractTest {
 	 * El primer error se produce al introducir un campo en blanco, el segundo al poner
 	 * el año de expiracion en pasado (2015) y el tercero se produce por meter un número
 	 * incorrecto
+	 */
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: Crear una tarjeta de crédito.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede crearla correctamente.
+	 * 
+	 * El primer test negativo es causado porque dejamos el campo brandname vacío, el
+	 * segundo es provocado porque el año de caducidad es anterior al actual y el
+	 * tercero es provocado porque el número de la tarjeta no es el correcto.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
 	 */
 
 	@Test
@@ -90,6 +114,22 @@ public class CreditCardTest extends AbstractTest {
 	 * el año de expiracion en pasado (2015) y el tercero se produce por meter un número
 	 * incorrecto
 	 */
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: Editar una tarjeta de crédito.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede editarla correctamente.
+	 * 
+	 * El primer test negativo es causado porque dejamos el campo brandname vacío y el
+	 * segundo es provocado porque el año de caducidad es anterior al actual.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
+
 	@Test
 	public void driverEditCreditCard() {
 		final Object testingData[][] = {
@@ -98,9 +138,9 @@ public class CreditCardTest extends AbstractTest {
 			}, {
 				"Rick Grimes", "DISCOVER", "6420559532032202", 8, 2021, 156, null
 			}, {
-				"Ragnar Lothbrok", "", "5019767397639669", 1, 2019, 688, IllegalArgumentException.class
+				"Ragnar Lothbrok", "", "5019767397639669", 1, 2019, 688, ConstraintViolationException.class
 			}, {
-				"Phil Dunphy", "MASTERCARD", "5293764977707328", 1, 2015, 688, IllegalArgumentException.class
+				"Phil Dunphy", "MASTERCARD", "5293764977707328", 1, 2015, 688, ConstraintViolationException.class
 			}
 		};
 		for (int i = 0; i < testingData.length; i++)
@@ -128,7 +168,7 @@ public class CreditCardTest extends AbstractTest {
 			creditCard.setCvv(cvv);
 
 			creditCard = this.creditCardService.save(creditCard);
-
+			this.creditCardService.findAll();
 			this.unauthenticate();
 		} catch (final Throwable oops) {
 			caught = oops.getClass();
@@ -138,6 +178,21 @@ public class CreditCardTest extends AbstractTest {
 
 	//El primer test negativo es causado porque la id de la creditcard es de otra que pertence a otro customer 
 	//y el segundo es porque no estamos logueado como customer.
+
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * - Un actor autenticado debe ser capaz de: Borrar una tarjeta de crédito.
+	 * 
+	 * En este test vamos a comprobar que un usuario puede borrarla correctamente.
+	 * 
+	 * Los dos tests negativos son causados porque intentamos borrar una tarjeta que no nos
+	 * pertenece.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 
 	@Test
 	public void driverDeleteCreditCard() {
