@@ -16,6 +16,14 @@ import org.springframework.util.Assert;
 import utilities.AbstractTest;
 import domain.Critic;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes a los casos de uso
+ * "Registrar crítico" y "Editar perfi del crítico" para comprobar que se crean adecuadamente.
+ * 
+ * @author Jesús Vázquez Argumedo
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -34,6 +42,22 @@ public class CriticTest extends AbstractTest {
 	// Dar de alta a un crítico.
 
 	//Registrar un nuevo crítico
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede registrar correctamente
+	 * un crítico estando logueado como administador.
+	 * 
+	 * El primer test negativo es causado porque no estamos logueado,
+	 * el segundo de ellos se produce porque no aceptamos las condiones de uso,
+	 * el tercero se produce porque dejamos el campo revista en blanco y
+	 * el cuarto es provocado porque intentamos registrar con un nombre de usuario ya existente.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverRegisterCritic() {
 		final Object testingData[][] = {
@@ -92,6 +116,21 @@ public class CriticTest extends AbstractTest {
 	}
 
 	//Editar el perfil de un critic
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede editar el perfil de usuario
+	 * correctamente de un crítico.
+	 * 
+	 * El primer test negativo es causado porque no coinciden la contraseña y la repetición,
+	 * el segundo de ellos se produce porque introducimos el correo con un formato incorrectoy
+	 * el tercero se produce porque dejamos el campo revista en blanco.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverEditCritic() {
 		final Object testingData[][] = {

@@ -13,6 +13,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import utilities.AbstractTest;
 import domain.Banner;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * a los casos de uso "Crear banner", "Editar banner" y
+ * "Borrar banner" para comprobar que se crean adecuadamente.
+ * 
+ * @author Jesús Vázquez Argumedo
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -29,6 +38,20 @@ public class BannerTest extends AbstractTest {
 	// FUNCTIONAL REQUIREMENTS
 
 	//Registrar un nuevo banner
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede crear correctamente
+	 * un banner.
+	 * 
+	 * El primer test negativo es causado porque estamos logeado por otro actor y
+	 * el segundo se produce porque introducimos una URL vacía.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverRegisterBanner() {
 		final Object testingData[][] = {
@@ -67,6 +90,20 @@ public class BannerTest extends AbstractTest {
 		this.checkExceptions(expected, caught);
 	}
 
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede editar correctamente
+	 * un banner.
+	 * 
+	 * El primer test negativo es causado porque estamos logeado por otro actor y
+	 * el segundo se produce porque introducimos una porcentaje fuera de rango del establecido.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	//Editar un banner
 	@Test
 	public void driverEditBanner() {
@@ -106,6 +143,19 @@ public class BannerTest extends AbstractTest {
 	}
 
 	//Borrar un banner
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede borrar correctamente
+	 * un banner.
+	 * 
+	 * El primer y único test negativo es causado porque estamos logeado por otro actor.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverBorrarBanner() {
 		final Object testingData[][] = {

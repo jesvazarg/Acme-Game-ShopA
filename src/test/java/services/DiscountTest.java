@@ -13,6 +13,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import utilities.AbstractTest;
 import domain.Discount;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * a los casos de uso "Crear cupón descuento", "Editar cupón descpues" y
+ * "Borrar cupón descuento" para comprobar que se crean adecuadamente.
+ * 
+ * @author Jesús Vázquez Argumedo
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -29,6 +38,20 @@ public class DiscountTest extends AbstractTest {
 	// FUNCTIONAL REQUIREMENTS
 
 	//Registrar un nuevo descuento
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede crear correctamente
+	 * un cupón descuento.
+	 * 
+	 * El primer test negativo es causado porque estamos logeado por otro actor y
+	 * el segundo se produce porque introducimos una porcentaje fuera de rango del establecido.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverRegisterDiscount() {
 		final Object testingData[][] = {
@@ -68,6 +91,21 @@ public class DiscountTest extends AbstractTest {
 	}
 
 	//Editar un descuento
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede editar correctamente
+	 * un cupón descuento.
+	 * 
+	 * El primer test negativo es causado porque no podemos editar un cupón ya usado,
+	 * el segundo se produce porque estamos logeado por otro actor y
+	 * el tercero porque introducimos una porcentaje fuera de rango del establecido.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverEditDiscount() {
 		final Object testingData[][] = {
@@ -108,6 +146,19 @@ public class DiscountTest extends AbstractTest {
 	}
 
 	//Borrar un descuento
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede borrar correctamente
+	 * un cupón descuento.
+	 * 
+	 * El primer y único test negativo es causado porque estamos logeado por otro actor.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverBorrarDiscount() {
 		final Object testingData[][] = {

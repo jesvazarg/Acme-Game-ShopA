@@ -185,8 +185,9 @@ public class CreditCardTest extends AbstractTest {
 	 * 
 	 * En este test vamos a comprobar que un usuario puede borrarla correctamente.
 	 * 
-	 * Los dos tests negativos son causados porque intentamos borrar una tarjeta que no nos
+	 * El primer test negativo es causado porque intentamos borrar una tarjeta que no nos
 	 * pertenece.
+	 * El segundo test es provocado porque se loguea con un actor incorrecto.
 	 * 
 	 * @param No
 	 *            es necesario parametro

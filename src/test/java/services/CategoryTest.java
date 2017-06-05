@@ -13,6 +13,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import utilities.AbstractTest;
 import domain.Category;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * a los casos de uso "Crear categoría", "Editar categoría" y
+ * "Borrar categoría" para comprobar que se crean adecuadamente.
+ * 
+ * @author Jesús Vázquez Argumedo
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -32,6 +41,21 @@ public class CategoryTest extends AbstractTest {
 	// Una categoría que tenga asociado un juego no puede ser borrada o editada del sistema.
 
 	//Registrar una nueva categoría
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede crear correctamente
+	 * una categoría.
+	 * 
+	 * El primer test negativo es causado porque estamos logeado por otro actor,
+	 * el segundo se produce porque introducimos un nombre vacío y
+	 * el tercero porque introducimos un nombre ya en uso.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverRegisterCategory() {
 		final Object testingData[][] = {
@@ -73,6 +97,21 @@ public class CategoryTest extends AbstractTest {
 	}
 
 	//Editar una categoría
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede editar correctamente
+	 * una categoría.
+	 * 
+	 * El primer test negativo es causado porque estamos logeado por otro actor,
+	 * el segundo se produce porque introducimos un nombre vacío y
+	 * el tercero porque introducimos un nombre ya en uso.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverEditCategory() {
 		final Object testingData[][] = {
@@ -113,6 +152,20 @@ public class CategoryTest extends AbstractTest {
 	}
 
 	//Borrar una categoría
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede borrar correctamente
+	 * una categoría.
+	 * 
+	 * El primer test negativo se produce porque no se puede borrar una categoía que esté asociada en un juego,
+	 * el segundo de ellos se produce porque estamos logeado por otro actor.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverBorrarCategory() {
 		final Object testingData[][] = {
