@@ -68,10 +68,9 @@ public class ShoppingCartTest extends AbstractTest {
 	 * el segundo es porque un developer no puede añadir juegos al carrito y el ultimo es causado porque
 	 * se le pasa un id de juego que no existe.
 	 * 
-	 * * @param No
-	 * es necesario parametro
+	 * @param No
+	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverAñadirYEliminarJuegosAlCarrito() {
@@ -140,10 +139,9 @@ public class ShoppingCartTest extends AbstractTest {
 	 * el segundo de ellos el id del game no existe, y los dos ultimos es causado ya que ni
 	 * el custmer2 ni el customer3 tienen tarjeta de credito
 	 * 
-	 * * @param No
-	 * es necesario parametro
+	 * @param No
+	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverComprarJuegosDelCarrito() {

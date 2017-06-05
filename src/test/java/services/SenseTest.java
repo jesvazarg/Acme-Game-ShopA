@@ -57,10 +57,9 @@ public class SenseTest extends AbstractTest {
 	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
 	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
 	 * 
-	 * * @param No
-	 * es necesario parametro
+	 * @param No
+	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverDarMeGustaAUnJuego() {
@@ -118,10 +117,9 @@ public class SenseTest extends AbstractTest {
 	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
 	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
 	 * 
-	 * * @param No
-	 * es necesario parametro
+	 * @param No
+	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverDarNoGustaAUnJuego() {
@@ -176,10 +174,9 @@ public class SenseTest extends AbstractTest {
 	 * estar logueados, en el segundo nos logueamos como un developer que tampoco puede darle
 	 * like a un juego y por ultimo introducimos un id que no pertenece a ningun juego
 	 * 
-	 * * @param No
-	 * es necesario parametro
+	 * @param No
+	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverCambiarLikeODislike() {

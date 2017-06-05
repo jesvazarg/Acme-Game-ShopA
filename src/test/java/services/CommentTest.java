@@ -62,7 +62,7 @@ public class CommentTest extends AbstractTest {
 	 * @param No
 	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
+	 * 
 	 */
 	@Test
 	public void driverAñadirComentarioAUnJuego() {

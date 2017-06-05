@@ -56,10 +56,9 @@ public class CustomerTest extends AbstractTest {
 	 * el siguiente error se produce porque el atributo IsAgree se encuetra a false (el usuario no ha aceptado los terminos)
 	 * por ultimo el correo electronico no sigue el formato adecuado
 	 * 
-	 * * @param No
-	 * es necesario parametro
+	 * @param No
+	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverRegistrarUnCliente() {
@@ -130,10 +129,9 @@ public class CustomerTest extends AbstractTest {
 	 * 
 	 * Con este test lo que vamos a comprobar es que un usuario es capaz de loguearse adecuadamente.
 	 * 
-	 * * @param No
-	 * es necesario parametro
+	 * @param No
+	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverLoguearteComoCustomer() {
@@ -183,10 +181,9 @@ public class CustomerTest extends AbstractTest {
 	 * Las pruebas que dan errores son porque la contraseña no es igual que la confirmacion de la contraseña,
 	 * intentamos loguearnos con un cliente que no existe y ponemos un correo electronico no valido
 	 * 
-	 * * @param No
-	 * es necesario parametro
+	 * @param No
+	 *            es necesario parametro
 	 * 
-	 * @return No devuelve nada
 	 */
 	@Test
 	public void driverEditarUnCliente() {
