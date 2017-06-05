@@ -23,7 +23,7 @@ import forms.CreateCustomerForm;
  * "Cambiar perfil de un cliente" para comprobar
  * que se realizan adecuadamente.
  * 
- * @author Santiago
+ * @author Santiago Fraga Martín-Arroyo
  * 
  */
 @ContextConfiguration(locations = {

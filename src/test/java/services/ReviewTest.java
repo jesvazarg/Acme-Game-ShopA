@@ -15,6 +15,15 @@ import utilities.AbstractTest;
 import domain.Game;
 import domain.Review;
 
+/**
+ * Esta clase permite la realizacion de los test correspondientes
+ * a los casos de uso "Añadir crítica", "Editar crítica" y "Borrar crítica"
+ * a los juegos para comprobar que se crean adecuadamente.
+ * 
+ * @author Jesús Vázquez Argumedo
+ * 
+ */
+
 @ContextConfiguration(locations = {
 	"classpath:spring/junit.xml"
 })
@@ -36,6 +45,22 @@ public class ReviewTest extends AbstractTest {
 	// Administrar sus críticas, lo que incluye crear, editar, listar y borrar.
 
 	//Registrar una nueva crítica
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede añadir correctamente
+	 * una crítica a un juego siendo publicada solamente una por juego un mismo crítico.
+	 * 
+	 * El primer test negativo es causado porque ya tenemos una crítica publicada en ese juego por ese crítico,
+	 * el segundo de ellos se produce porque estamos logeado por otro actor,
+	 * el tercero se produce porque introducimos una valoración fuera de rango del establecido y
+	 * el cuarto es provocado porque el título lo hemos dejado en blanco.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverRegisterReview() {
 		final Object testingData[][] = {
@@ -78,6 +103,8 @@ public class ReviewTest extends AbstractTest {
 			review = this.reviewService.save(review);
 			this.reviewService.findAll();
 			this.reviewService.findOne(review.getId());
+
+			this.unauthenticate();
 		} catch (final Throwable oops) {
 			caught = oops.getClass();
 		}
@@ -85,13 +112,29 @@ public class ReviewTest extends AbstractTest {
 	}
 
 	//Editar una crítica
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede editar correctamente
+	 * una crítica a un juego siendo publicada solamente una por juego un mismo crítico.
+	 * 
+	 * El primer test negativo es causado porque ya tenemos una crítica publicada en ese juego por ese crítico,
+	 * el segundo de ellos se produce porque estamos logeado con un crítico que es el propietario de esa crítica,
+	 * el tercero se produce porque introducimos una valoración fuera de rango del establecido y
+	 * el cuarto es provocado porque el título lo hemos dejado en blanco.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverEditReview() {
 		final Object testingData[][] = {
 			{
-				"critic1", 127, "Titulo", "descripción", 0, true, null
+				"critic1", 125, "Titulo", "descripción", 0, true, null
 			}, {
-				"critic2", 129, "Titulo2", "descripción2", 10, false, null
+				"critic2", 129, "Titulo2", "descripción2", 10, true, null
 			}, {
 				"critic1", 125, "Titulo3", "descripción3", 5, false, IncorrectResultSizeDataAccessException.class
 			}, {
@@ -123,6 +166,8 @@ public class ReviewTest extends AbstractTest {
 
 			review = this.reviewService.save(review);
 			this.reviewService.findAll();
+
+			this.unauthenticate();
 		} catch (final Throwable oops) {
 			caught = oops.getClass();
 		}
@@ -130,15 +175,31 @@ public class ReviewTest extends AbstractTest {
 	}
 
 	//Borrar una crítica
+	/**
+	 * FUNCTIONAL REQUIREMENTS
+	 * 
+	 * En este test vamos a comprobar que un usuario puede borrar correctamente
+	 * una crítica a un juego.
+	 * 
+	 * El primer test negativo se produce porque estamos logeado con un crítico que es el propietario de esa crítica,
+	 * el segundo de ellos se produce porque no se puede borrar una crítica ya publicada.
+	 * 
+	 * @param No
+	 *            es necesario parametro
+	 * 
+	 * 
+	 */
 	@Test
 	public void driverDeleteReview() {
 		final Object testingData[][] = {
 			{
-				"critic1", 127, null
+				"critic1", 125, null
 			}, {
 				"critic2", 129, null
 			}, {
 				"critic3", 129, IllegalArgumentException.class
+			}, {
+				"critic1", 126, IllegalArgumentException.class
 			}
 		};
 
@@ -157,6 +218,8 @@ public class ReviewTest extends AbstractTest {
 
 			this.reviewService.delete(review);
 			this.reviewService.findAll();
+
+			this.unauthenticate();
 		} catch (final Throwable oops) {
 			caught = oops.getClass();
 		}

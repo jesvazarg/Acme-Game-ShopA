@@ -18,7 +18,7 @@ import domain.Sense;
  * al caso de uso "Darle me gusta/no me gusta a los juegos" para comprobar
  * que se crean adecuadamente.
  * 
- * @author Santiago
+ * @author Santiago Fraga Martín-Arroyo
  * 
  */
 @ContextConfiguration(locations = {

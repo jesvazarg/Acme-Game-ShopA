@@ -20,7 +20,7 @@ import domain.ShoppingCart;
  * al caso de uso "Añadir juegos al carro de la compra y realizar la compra" para comprobar
  * que funciona adecuadamente.
  * 
- * @author Santiago
+ * @author Santiago Fraga Martín-Arroyo
  * 
  */
 @ContextConfiguration(locations = {
